@@ -1,62 +1,69 @@
-# 📘 onlyactions.github.io
+# Toon Table of Contents
 
-> A tiny, cartoon storybook of tools — the home page of **OnlyActions**.
-> Open the cover and flip through: every project gets a *chapter* (its story)
-> and a *manual* (how to use it), bound with pure CSS and stardust.
+The living grimoire of **OnlyActions** — a full-screen, Yu-Gi-Oh! **Toon**-themed table of
+contents and manual for every project. Not cute. Powerful.
 
-**Live book → <https://onlyactions.github.io/>**
+Built around the *Toon Table of Contents* spell card (`ToonTableOfContents.png`):
+a dark duel arena, a spell card you **activate**, and a giant grimoire that takes over
+the entire screen with real 3D page turns, rainbow INDEX entries, holo monster cards
+and synthesized dueling sounds.
 
-## ✨ What's inside
+## What's inside
 
-| File | What it is |
-| --- | --- |
-| `index.html` | The stage: dreamscape, chrome, and the empty book |
-| `css/style.css` | The wardrobe — dusk sky, paper, flip animation, cartoon bits |
-| `js/book.js` | The bindery — flips pages, dots, keyboard, swipe, deep links |
-| `js/content.js` | **The quill — the only file you edit to grow the book** |
-| `assets/` | Favicons & social images |
+| Piece | File | What it is |
+| --- | --- | --- |
+| The duel arena + spell card | `index.html` | Landing scene: click the card to activate the grimoire |
+| All the magic | `css/style.css` | Arena, 3D book, holo cards, tabs, gallery, mobile mode |
+| The engine | `js/app.js` | Page-flip physics, activation, sound synth, routing, tilt |
+| **The content** | `js/content.js` | **The only file you need to edit** |
 
-## 🪄 Add a chapter (a project)
+## How to add your project (summon a chapter)
 
-1. Open `js/content.js`.
-2. Copy any chapter block under `chapters:` and change its words:
+1. Open `js/content.js`
+2. Copy a chapter block under `chapters` and fill it in:
 
 ```js
 {
-  id:      "my-tool",
-  icon:    "🪄",
-  color:   "#7bd8b0",
-  title:   "My Tool",
-  tagline: "in which things get easier.",
-  status:  "live",
-  story:   [ "Once upon a commit…" ],
-  manual:  {
-    title: "How to Use My Tool",
-    steps: [ { title: "Install", text: "npm i my-tool" } ],
-    tip:   "a little golden tip for the margins"
+  id: "my-tool",  num: "III",  tab: "MY TOOL",
+  name: "MY TOOL", type: "TOON / CLI · EFFECT",
+  atk: "1800",  def: "1200",
+  lore: "One breath of what it does.",
+  status: "live",            // or "sealed" for a teaser card
+  color: "#37d67a",
+  manual: {
+    title: "How to Wield It",
+    summon:  [ { t: "SUMMON IT",  d: "npm i my-tool" } ],
+    effects: [ "What it hits with." ],
+    keys:    [ ["→", "what the key does"] ],
+    tip: "A combo worth knowing."
   },
-  extra:   null
+  link: { label: "open the repo", url: "https://github.com/..." }
 }
 ```
 
-3. Commit & push to `main` — GitHub Pages rebinds the book automatically.
+3. Push to `main` — GitHub Pages re-binds the book automatically:
+   a new rainbow entry appears in the INDEX, a gold bookmark tab grows on the
+   edge of the book, and the card joins the gallery.
 
-Every chapter becomes a line in the **Contents**, a story page, and a
-how-to page. Set `status: "soon"` to plant a seedling chapter instead.
+## Reading controls
 
-## 📖 Reading the book
+| Input | Action |
+| --- | --- |
+| Click card / `Enter` | Activate the spell |
+| `→` `←` / swipe / page corners | Turn pages |
+| Gold tabs on the book's edge | Teleport to a chapter |
+| `G` | Card gallery |
+| `M` | Mute / unmute |
+| `F` | Fullscreen |
+| `Esc` | Back to the arena |
+| Direct link `…/#spread-3` | Land on any spread |
 
-- Turn pages: curled corners, the arrows, `←` `→` keys, or swipe
-- Jump: tap any line in the Contents (the 📖 ribbon brings you back)
-- Share: every spread has its own address — `#cover`, `#toc`, `#read`,
-  `#storybook`, `#grow`, `#seedling`, `#end`…
+Every spread has its own URL. Desktop gets the full two-page grimoire;
+screens under 1024px get a full-screen flat page runner with swipe support.
 
-## 🛠 Under the hood
+## Stack
 
-- No framework, no build step, no tracking — three hand-written files
-- Desktop: a real flippable spread book (CSS 3D transforms)
-- Small screens: the same pages become a swipeable deck
-- Respects `prefers-reduced-motion` (flips become instant, ambience rests)
-- Keyboard accessible, screen-reader announcements, `inert` on hidden pages
+Static HTML + CSS + vanilla JS. No frameworks, no build step, no audio files
+(every sound is synthesized live with WebAudio). Hosted on GitHub Pages.
 
-*Set in Baloo 2 & Nunito · bound with pure CSS · dreams supplied by Doodle 🪱*
+*The toons are watching.*
