@@ -1,0 +1,633 @@
+/* ==========================================================================
+   TOON TABLE OF CONTENTS — css/book.css
+   The paper half of the book: INDEX, chapter spreads, spell cards,
+   manual pages, the sealed sigils, the binding inset.
+   ========================================================================== */
+
+/* ------------------------------ paper ------------------------------ */
+.paper {
+  position: relative;
+  color: var(--paper-ink);
+  background: linear-gradient(180deg, #f6efdc 0%, #f1e7cf 30%, #f6efdc 62%, #eee2c6 100%);
+  box-shadow:
+    inset 0 26px 38px -26px rgba(20, 10, 40, .6),
+    inset 0 -26px 38px -26px rgba(20, 10, 40, .6);
+  padding: 4.5rem 0 5.5rem;
+}
+.paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(36, 29, 51, .055) 1px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+.paper > section, .paper > .wrap { position: relative; }
+
+/* paper section headers */
+.paper-head { text-align: center; margin-bottom: 2.8rem; }
+
+.paper-run {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(36, 29, 51, .18);
+  padding-bottom: .8rem;
+  margin-bottom: 2.8rem;
+  font: 600 .58rem/1.6 "Inter", sans-serif;
+  letter-spacing: .22em;
+  color: rgba(36, 29, 51, .55);
+}
+.paper-run span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.index-word {
+  font: 900 clamp(2.9rem, 9vw, 5.4rem)/1 "Cinzel", serif;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.paper-title {
+  font: 700 clamp(1.85rem, 4.4vw, 2.7rem)/1.15 "Cinzel", serif;
+  color: var(--paper-ink);
+}
+.paper-title::before { content: "❖\00a0\00a0"; color: var(--gold-deep); font-size: .72em; }
+.paper-title::after  { content: "\00a0\00a0❖"; color: var(--gold-deep); font-size: .72em; }
+
+.paper-sub {
+  font: italic 400 clamp(.95rem, 1.5vw, 1.05rem)/1.7 "Lora", Georgia, serif;
+  color: rgba(36, 29, 51, .62);
+  margin-top: .95rem;
+}
+
+/* ------------------------------ INDEX ------------------------------ */
+.index-sec { padding-bottom: 2.5rem; }
+
+.index-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.ix {
+  display: flex;
+  align-items: baseline;
+  gap: .65rem;
+  padding: .85rem .9rem;
+  border-radius: 8px;
+  color: var(--paper-ink);
+  text-decoration: none;
+  position: relative;
+  min-width: 0;
+  transition: background-color .25s ease, transform .25s ease;
+}
+.ix::after {
+  content: "";
+  position: absolute;
+  left: .9rem;
+  right: .9rem;
+  bottom: .3rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--rainbow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s var(--ease-out);
+}
+.ix:hover, .ix:focus-visible {
+  background: rgba(23, 104, 61, .07);
+  transform: translateX(6px);
+}
+.ix:hover::after, .ix:focus-visible::after { transform: scaleX(1); }
+.ix:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 2px; }
+
+.ix-name {
+  font: 700 clamp(.95rem, 1.8vw, 1.05rem)/1.4 "Cinzel", serif;
+  letter-spacing: .06em;
+  color: var(--green);
+  overflow-wrap: anywhere;
+}
+.ix-name.is-sealed { color: rgba(36, 29, 51, .42); }
+
+.ix-leader {
+  flex: 1;
+  min-width: 1.5rem;
+  border-bottom: 2px dotted rgba(36, 29, 51, .32);
+  transform: translateY(-4px);
+}
+
+.ix-status {
+  flex: none;
+  font: 600 .56rem/1 "Inter", sans-serif;
+  letter-spacing: .14em;
+  padding: .3rem .55rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+.ix-status.live {
+  color: #136b3e;
+  background: rgba(23, 104, 61, .1);
+  border: 1px solid rgba(23, 104, 61, .38);
+}
+.ix-status.sealed {
+  color: #5b4a86;
+  background: rgba(91, 75, 134, .08);
+  border: 1px dashed rgba(91, 75, 134, .45);
+}
+
+.ix-page {
+  flex: none;
+  min-width: 3.4ch;
+  text-align: right;
+  font: 700 .95rem/1 "Cinzel", serif;
+  color: var(--paper-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.ix-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.4rem .9rem 1rem;
+  font: 600 .6rem/1 "Inter", sans-serif;
+  letter-spacing: .3em;
+  color: rgba(36, 29, 51, .45);
+}
+.ix-divider::before, .ix-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(36, 29, 51, .18);
+}
+
+/* --------------------------- chapter spreads ------------------------ */
+.codex-sec { padding-top: 2.5rem; }
+
+.spread {
+  position: relative;
+  padding: 3.6rem 0 3rem;
+  border-top: 1px solid rgba(36, 29, 51, .14);
+  border-radius: 10px;
+  scroll-margin-top: calc(var(--nav-h) + 24px);
+}
+.spread.flash { animation: entryflash 1.3s ease 1; }
+
+@keyframes entryflash {
+  0%   { box-shadow: 0 0 0 0 rgba(229, 189, 98, 0);   background: rgba(229, 189, 98, .28); }
+  60%  { box-shadow: 0 0 0 10px rgba(229, 189, 98, 0); background: rgba(229, 189, 98, .12); }
+  100% { box-shadow: 0 0 0 16px rgba(229, 189, 98, 0); background: rgba(229, 189, 98, 0); }
+}
+
+.spread-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.4rem;
+  flex-wrap: wrap;
+}
+
+.spread-num {
+  font: 700 .62rem/1 "Cinzel", serif;
+  letter-spacing: .18em;
+  color: var(--gold-ink);
+  background: linear-gradient(115deg, #f3d98b, #dfb459);
+  padding: .45rem .8rem;
+  border-radius: 99px;
+  box-shadow: inset 0 0 0 1px rgba(124, 90, 23, .4);
+  white-space: nowrap;
+}
+
+.spread-title {
+  font: 700 clamp(1.35rem, 3vw, 1.9rem)/1.2 "Cinzel", serif;
+  color: var(--paper-ink);
+  overflow-wrap: anywhere;
+}
+
+.spread-rule {
+  flex: 1 1 2rem;
+  min-width: 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(36, 29, 51, .3), transparent);
+}
+
+.spread-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 4.5vw, 4rem);
+  align-items: start;
+}
+
+@media (min-width: 940px) {
+  .manual-page {
+    border-left: 1px dashed rgba(36, 29, 51, .22);
+    padding-left: clamp(1.6rem, 3vw, 3rem);
+  }
+}
+
+@media (max-width: 939px) {
+  .spread-grid { grid-template-columns: minmax(0, 1fr); }
+  .card-col { max-width: 380px; margin-inline: auto; width: 100%; }
+}
+
+/* --------------------------- the spell card ------------------------- */
+.card-col { min-width: 0; }
+
+.card-frame {
+  border-radius: 14px;
+  padding: 7px;
+  background: linear-gradient(160deg, #d8b558 0%, #8a6a24 42%, #e6c873 72%, #96722a 100%);
+  box-shadow:
+    0 24px 50px -20px rgba(20, 10, 40, .55),
+    0 4px 14px rgba(20, 10, 40, .18);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.card-frame:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 34px 62px -20px rgba(20, 10, 40, .6),
+    0 8px 18px rgba(20, 10, 40, .2);
+}
+
+.card-face {
+  border-radius: 9px;
+  background: #f7f0dc;
+  border: 1px solid #2a2318;
+  padding: 10px 11px 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.card-face.is-dark {
+  background: linear-gradient(175deg, #241a3d, #120b26);
+  border-color: rgba(229, 189, 98, .55);
+}
+
+.card-name {
+  font: 700 1rem/1.35 "Cinzel", serif;
+  letter-spacing: .045em;
+  color: var(--paper-ink);
+  overflow-wrap: anywhere;
+}
+.is-dark .card-name { color: var(--gold); }
+
+.card-art {
+  position: relative;
+  aspect-ratio: 10 / 9;
+  border-radius: 6px;
+  border: 1px solid rgba(36, 29, 51, .6);
+  background: linear-gradient(160deg, var(--art-a, #2c8f5c), var(--art-b, #0d2b1e));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.is-dark .card-art { border-color: rgba(229, 189, 98, .4); }
+
+.card-art .glyph {
+  width: 44%;
+  height: 44%;
+  max-width: 96px;
+  max-height: 96px;
+  color: rgba(255, 255, 255, .92);
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, .45));
+}
+.is-dark .card-art .glyph { color: var(--gold); }
+
+.card-attr {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  font: 600 .56rem/1 "Inter", sans-serif;
+  letter-spacing: .14em;
+  color: #241a08;
+  background: linear-gradient(115deg, #f3d98b, #dfb459);
+  padding: .32rem .55rem;
+  border-radius: 99px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+}
+
+.card-type {
+  font: 600 .64rem/1.5 "Inter", sans-serif;
+  letter-spacing: .12em;
+  color: #4a3f63;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(36, 29, 51, .22);
+}
+.is-dark .card-type { color: rgba(229, 189, 98, .75); border-color: rgba(229, 189, 98, .25); }
+
+.card-lore {
+  font: italic 400 .86rem/1.65 "Lora", Georgia, serif;
+  color: #3a3350;
+  flex: 1;
+}
+.is-dark .card-lore { color: rgba(242, 234, 217, .82); }
+
+.card-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .8rem;
+  flex-wrap: wrap;
+  font: 700 .78rem/1 "Cinzel", serif;
+  letter-spacing: .06em;
+  color: var(--paper-ink);
+  border-top: 1px dashed rgba(36, 29, 51, .3);
+  padding-top: 8px;
+}
+.is-dark .card-stats { color: var(--gold); border-color: rgba(229, 189, 98, .3); }
+
+.card-status {
+  font: 600 .56rem/1 "Inter", sans-serif;
+  letter-spacing: .14em;
+  padding: .3rem .55rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+.card-status.live   { color: #136b3e; border: 1px solid rgba(23, 104, 61, .45); }
+.card-status.sealed { color: #5b4a86; border: 1px dashed rgba(91, 75, 134, .55); }
+
+.card-cap {
+  margin-top: .9rem;
+  font: italic 400 .78rem/1.6 "Lora", Georgia, serif;
+  color: rgba(36, 29, 51, .58);
+  text-align: center;
+}
+
+.card-link { margin-top: 1rem; text-align: center; }
+
+/* --------------------------- the manual page ------------------------ */
+.manual-page { min-width: 0; }
+
+.manual-head {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.7rem;
+}
+
+.manual-chip {
+  font: 700 .56rem/1 "Inter", sans-serif;
+  letter-spacing: .2em;
+  color: var(--gold-ink);
+  border: 1px solid rgba(138, 106, 36, .55);
+  padding: .35rem .6rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.manual-title {
+  font: 600 1.22rem/1.35 "Lora", Georgia, serif;
+  color: var(--paper-ink);
+}
+
+.manual-intro {
+  font: 400 .98rem/1.75 "Lora", Georgia, serif;
+  color: var(--paper-soft);
+  margin-bottom: 1.5rem;
+}
+
+.ritual {
+  list-style: none;
+  counter-reset: r;
+  padding: 0;
+  display: grid;
+  gap: 1.15rem;
+}
+.ritual li {
+  counter-increment: r;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: .9rem;
+  align-items: start;
+}
+.ritual li::before {
+  content: counter(r);
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 700 .8rem/1 "Cinzel", serif;
+  color: var(--gold-ink);
+  background: radial-gradient(circle at 30% 25%, #f3d98b, #d9ae4e);
+  box-shadow: inset 0 0 0 1px rgba(124, 90, 23, .45), 0 2px 6px rgba(124, 90, 23, .25);
+  margin-top: .1rem;
+}
+.ritual-t {
+  font: 600 .74rem/1.6 "Inter", sans-serif;
+  letter-spacing: .13em;
+  color: var(--paper-ink);
+}
+.ritual-d {
+  font: 400 .94rem/1.7 "Lora", Georgia, serif;
+  color: var(--paper-soft);
+}
+
+.m-block { margin-top: 1.9rem; }
+.m-block h4 {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  font: 700 .66rem/1 "Inter", sans-serif;
+  letter-spacing: .2em;
+  color: var(--gold-deep);
+  margin-bottom: .95rem;
+}
+.m-block h4::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(138, 106, 36, .35);
+}
+
+.effects { list-style: none; padding: 0; display: grid; gap: .6rem; }
+.effects li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: .65rem;
+  font: 400 .94rem/1.7 "Lora", Georgia, serif;
+  color: var(--paper-soft);
+}
+.effects li::before {
+  content: "✦";
+  color: var(--gold-deep);
+  font-size: .78rem;
+  line-height: 1.9;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: .6rem 1.4rem;
+}
+.key-row {
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  min-width: 0;
+}
+.key-row kbd {
+  flex: none;
+  font: 600 .64rem/1 "Inter", sans-serif;
+  letter-spacing: .05em;
+  padding: .34rem .55rem;
+  border-radius: 6px;
+  background: var(--paper-ink);
+  color: var(--paper);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .3);
+  white-space: nowrap;
+}
+.key-row span {
+  font: 400 .88rem/1.6 "Lora", Georgia, serif;
+  color: var(--paper-soft);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.tip {
+  margin-top: 1.9rem;
+  padding: 1rem 1.2rem;
+  background: #efe3c6;
+  border-left: 3px solid var(--gold-deep);
+  border-radius: 0 8px 8px 0;
+  font: italic 400 .94rem/1.7 "Lora", Georgia, serif;
+  color: #4a3f2a;
+}
+
+.manual-foot {
+  margin-top: 2.4rem;
+  text-align: center;
+  font: 600 .62rem/1 "Inter", sans-serif;
+  letter-spacing: .34em;
+  color: rgba(36, 29, 51, .5);
+}
+
+/* --------------------------- sealed sigils -------------------------- */
+.sealed-sec { padding-top: 2rem; }
+
+.sealed-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 4.5vw, 4rem);
+  align-items: start;
+}
+
+@media (max-width: 939px) {
+  .sealed-grid { grid-template-columns: minmax(0, 1fr); }
+  .sealed-card-col { max-width: 380px; margin-inline: auto; width: 100%; }
+}
+
+.sigil-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(158px, 100%), 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.sigil {
+  position: relative;
+  border-radius: 12px;
+  padding: 1.5rem .8rem 1.3rem;
+  text-align: center;
+  background: linear-gradient(170deg, #1a1230 0%, #0e081c 100%);
+  border: 1px dashed rgba(229, 189, 98, .42);
+  min-width: 0;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.sigil:hover {
+  transform: translateY(-4px);
+  border-color: rgba(229, 189, 98, .85);
+  box-shadow: 0 20px 44px -20px rgba(10, 5, 22, .8);
+}
+
+.sigil-chip {
+  position: absolute;
+  top: .65rem;
+  right: .7rem;
+  font: 600 .5rem/1 "Inter", sans-serif;
+  letter-spacing: .18em;
+  color: rgba(229, 189, 98, .65);
+}
+
+.sigil-rune {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto .85rem;
+  display: grid;
+  place-items: center;
+  font: 900 1.35rem/1 "Cinzel", serif;
+  color: var(--gold);
+  background: rgba(229, 189, 98, .07);
+  border: 1px solid rgba(229, 189, 98, .38);
+  border-radius: 50%;
+  box-shadow: 0 0 24px rgba(229, 189, 98, .14) inset;
+}
+
+.sigil-name {
+  font: 700 .8rem/1.4 "Cinzel", serif;
+  letter-spacing: .14em;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.sigil-code {
+  margin-top: .35rem;
+  font: 700 .8rem/1 "Cinzel", serif;
+  color: rgba(229, 189, 98, .85);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------- binding inset -------------------------- */
+.bind-inset {
+  margin-top: 3.4rem;
+  border: 1px solid rgba(36, 29, 51, .25);
+  border-radius: 12px;
+  padding: 1.6rem clamp(1.2rem, 3vw, 2rem);
+  background: rgba(255, 255, 255, .28);
+  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, .18);
+}
+
+.bind-title {
+  font: 700 .78rem/1 "Inter", sans-serif;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 1.2rem;
+}
+
+.bind-steps {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 1.1rem;
+}
+.bind-steps li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: .75rem;
+  align-items: start;
+  font: 400 .9rem/1.65 "Lora", Georgia, serif;
+  color: var(--paper-soft);
+}
+.bind-steps li b {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 700 .78rem/1 "Cinzel", serif;
+  color: #241a08;
+  background: linear-gradient(115deg, #f3d98b, #dfb459);
+  box-shadow: inset 0 0 0 1px rgba(124, 90, 23, .4);
+}
+.bind-steps code {
+  font: 600 .82em "Inter", sans-serif;
+  background: rgba(36, 29, 51, .08);
+  border: 1px solid rgba(36, 29, 51, .18);
+  border-radius: 5px;
+  padding: .1em .35em;
+  color: var(--paper-ink);
+  overflow-wrap: anywhere;
+}
