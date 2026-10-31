@@ -1,124 +1,160 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Toon Table of Contents — OnlyActions</title>
-  <meta name="description" content="Activate the spell card and open the living grimoire: a full-screen Toon table of contents and manual for every OnlyActions project. Not cute — powerful." />
-  <meta name="theme-color" content="#0b0518" />
-  <link rel="canonical" href="https://onlyactions.github.io/" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://onlyactions.github.io/" />
-  <meta property="og:title" content="Toon Table of Contents — OnlyActions" />
-  <meta property="og:description" content="A spell card, a duel arena, and a full-screen living grimoire holding the ToC and manual of every OnlyActions project." />
-  <meta property="og:image" content="https://onlyactions.github.io/ToonTableOfContents.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='4' width='52' height='56' rx='10' fill='%230c6b3c'/%3E%3Crect x='14' y='10' width='36' height='44' rx='4' fill='%23f6ecd4'/%3E%3Ctext x='18' y='40' font-size='26' font-family='sans-serif' font-weight='bold' fill='%230c6b3c'%3EiN%3C/text%3E%3Ccircle cx='47' cy='17' r='6' fill='%23ffd34d'/%3E%3C/svg%3E" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cinzel:wght@700;900&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toon Table of Contents — The Living Grimoire of OnlyActions</title>
+<meta name="description" content="A living Yu-Gi-Oh! Toon-styled grimoire: the table of contents and manual for every OnlyActions project. Not cute — powerful.">
+<meta property="og:title" content="Toon Table of Contents">
+<meta property="og:description" content="The living grimoire of every OnlyActions project — a table of contents with teeth.">
+<meta property="og:image" content="https://onlyactions.github.io/ToonTableOfContents.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e0920'/%3E%3Cpath d='M7 10c3-1.6 6-1.6 9 0v13c-3-1.6-6-1.6-9 0zM25 10c-3-1.6-6-1.6-9 0v13c3-1.6 6-1.6 9 0z' fill='none' stroke='%23e5bd62' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/book.css">
 </head>
 <body>
+<a class="skip-link" href="#index">Skip to the INDEX</a>
 
-  <!-- ══════════════════════════ SCENE I — THE DUEL ARENA ══════════════════════════ -->
-  <section id="arena" class="arena" aria-label="The duel arena">
-    <div class="arena__bg" aria-hidden="true">
-      <div class="arena__glow"></div>
-      <div id="arenaStars" class="arena__stars"></div>
-      <div class="magiccircle magiccircle--a"></div>
-      <div class="magiccircle magiccircle--b"></div>
-      <div class="arena__rays"></div>
-      <div class="arena__floor"></div>
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Toon Table of Contents — back to top">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.2 4.4 9 4.4 12 6v13.5C9 17.9 6.2 17.9 4 19zM20 5.5C17.8 4.4 15 4.4 12 6v13.5c3-1.6 5.8-1.6 8-.5z"/></svg>
+      <span class="brand-name rainbow-text">Toon Table <b>of Contents</b></span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#index" data-navlink="index">Index</a>
+      <a href="#codex" data-navlink="codex">Chapters</a>
+      <a href="#unsummoned" data-navlink="unsummoned">Sigils</a>
+      <a href="#pact" data-navlink="pact">Pact</a>
+      <a class="nav-repo" href="https://github.com/onlyactions" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+  <span class="progress" id="progress" aria-hidden="true"></span>
+</header>
+
+<main id="top">
+
+  <!-- ══════════════════════ THE DREAM — HERO ══════════════════════ -->
+  <section class="hero" id="hero" aria-label="Toon Table of Contents">
+    <div class="stars" id="stars" aria-hidden="true"></div>
+
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker reveal">◆ THE LIVING GRIMOIRE OF ONLYACTIONS ◆</p>
+        <h1 class="hero-title">
+          <span class="ht-line reveal">Toon Table</span>
+          <span class="ht-line rainbow-text reveal">of Contents</span>
+        </h1>
+        <p class="hero-lede reveal">A table of contents with teeth. Every entry is a real project, every page number is real, and the book grows each time a new power ships. <strong>Not cute — powerful.</strong></p>
+        <div class="hero-ctas reveal">
+          <a class="btn btn-gold" href="#index">Open the Index</a>
+          <a class="btn btn-ghost" href="#codex">Read the Manual</a>
+        </div>
+        <p class="hero-meta reveal" id="heroMeta"></p>
+      </div>
+
+      <figure class="hero-card-zone reveal">
+        <svg class="hero-arc" viewBox="0 0 600 340" aria-hidden="true" preserveAspectRatio="xMidYMax meet">
+          <g fill="none" stroke-linecap="round">
+            <path d="M48 330 A252 252 0 0 1 552 330" stroke="#ff5a5a"/>
+            <path d="M62 330 A238 238 0 0 1 538 330" stroke="#ff9d3c"/>
+            <path d="M76 330 A224 224 0 0 1 524 330" stroke="#ffd93c"/>
+            <path d="M90 330 A210 210 0 0 1 510 330" stroke="#4cd964"/>
+            <path d="M104 330 A196 196 0 0 1 496 330" stroke="#38c3ff"/>
+            <path d="M118 330 A182 182 0 0 1 482 330" stroke="#7a5cff"/>
+            <path d="M132 330 A168 168 0 0 1 468 330" stroke="#d24fd6"/>
+          </g>
+        </svg>
+        <button class="spell-art" id="heroCard" type="button" aria-label="Activate the spell — open the Index">
+          <img src="ToonTableOfContents.png" alt="Toon Table of Contents — the original spell card: the great Toon World book opened to its rainbow INDEX" width="1024" height="1024">
+        </button>
+        <figcaption class="hero-cap">Normal Spell · “add 1 “Toon” card from your Deck to your hand”</figcaption>
+      </figure>
     </div>
 
-    <header class="arena__brand">
-      <span class="arena__brand-pre">ONLYACTIONS PRESENTS</span>
-      <span class="arena__brand-rule"></span>
-      <span class="arena__brand-post">A TABLE OF CONTENTS WITH TEETH</span>
-    </header>
-
-    <div class="arena__deck" aria-hidden="true">
-      <span class="deckcard deckcard--1"></span>
-      <span class="deckcard deckcard--2"></span>
-      <span class="deckcard deckcard--3"></span>
-      <span class="deckcard deckcard--4"></span>
-    </div>
-
-    <button id="heroCard" class="spellcard" data-action="activate" aria-label="Activate the spell card Toon Table of Contents">
-      <span class="spellcard__frame">
-        <span class="spellcard__name">TOON TABLE OF CONTENTS</span>
-        <span class="spellcard__icon" aria-hidden="true"><i></i></span>
-        <span class="spellcard__art" data-art="book"></span>
-        <span class="spellcard__type">NORMAL SPELL</span>
-        <span class="spellcard__text">Add 1 &ldquo;Toon&rdquo; chapter from your Deck to your screen. Once per turn: turn any page of this book, ignoring the rules. The toons are always watching.</span>
-        <span class="spellcard__foot"><span>ONLYACTIONS</span><span>1ST ED &#10022;</span></span>
-      </span>
-      <span class="spellcard__shine" aria-hidden="true"></span>
-    </button>
-
-    <p class="arena__hint" aria-hidden="true"><b>CLICK THE CARD TO ACTIVATE</b><span>or press ENTER</span></p>
-
-    <footer class="arena__foot">
-      <button class="btn-line" data-action="skip">skip the ritual &#8594; straight to the book</button>
-    </footer>
+    <a class="scroll-cue" href="#index" aria-label="Scroll down to the Index"><span>Descend</span><i aria-hidden="true"></i></a>
   </section>
 
-  <!-- ══════════════════════════ SCENE II — THE GRIMOIRE ══════════════════════════ -->
-  <section id="stage" class="stage" hidden aria-label="The grimoire">
-    <div class="stage__bg" aria-hidden="true">
-      <div class="stage__glow"></div>
-      <div id="stageStars" class="stage__stars"></div>
-      <div class="stage__floor"></div>
-    </div>
+  <!-- ══════════════════════ THE BOOK — PAPER ══════════════════════ -->
+  <div class="paper" id="book">
 
-    <header class="chrome chrome--top">
-      <button class="wordmark" data-action="arena" title="Back to the arena">
-        <span class="wordmark__seal">&#10022;</span> TOON TABLE OF CONTENTS
-      </button>
-      <nav class="chrome__tools" aria-label="Grimoire controls">
-        <button class="tool" data-action="gallery" aria-label="Card gallery (G)" title="Card gallery (G)"><span>&#9638;</span> CARDS</button>
-        <button class="tool" id="soundBtn" data-action="sound" aria-label="Mute (M)" title="Sound (M)"><span>&#9834;</span> SOUND</button>
-        <button class="tool" data-action="fullscreen" aria-label="Fullscreen (F)" title="Fullscreen (F)"><span>&#9974;</span> FULL</button>
-      </nav>
-    </header>
+    <!-- —— THE INDEX —— -->
+    <section class="index-sec" id="index" aria-labelledby="indexTitle">
+      <div class="wrap">
+        <header class="paper-head reveal">
+          <p class="paper-run"><span id="runLeft"></span><span id="runRight"></span></p>
+          <h2 class="index-word rainbow-text" id="indexTitle">Index</h2>
+          <p class="paper-sub">every entry is a real summon — no dead links in this book</p>
+        </header>
+        <nav class="index-list" id="indexList" aria-label="Table of contents"></nav>
+      </div>
+    </section>
 
-    <div class="bookwrap">
-      <div class="bookshadow" aria-hidden="true"></div>
+    <!-- —— THE CHAPTERS —— -->
+    <section class="codex-sec" id="codex" aria-labelledby="codexTitle">
+      <div class="wrap">
+        <header class="paper-head reveal">
+          <h2 class="paper-title" id="codexTitle">The Chapters</h2>
+          <p class="paper-sub">one spread per project — card on the left page, manual on the right</p>
+        </header>
+        <div id="spreads"></div>
+      </div>
+    </section>
 
-      <!-- 3D grimoire (desktop) -->
-      <div id="book" class="book book--closed" aria-live="polite"></div>
+    <!-- —— THE UN-SUMMONED —— -->
+    <section class="sealed-sec" id="unsummoned" aria-labelledby="sealedTitle">
+      <div class="wrap">
+        <header class="paper-head reveal">
+          <h2 class="paper-title" id="sealedTitle">The Un-Summoned</h2>
+          <p class="paper-sub">six sigils sleep in the index — each waiting for its project</p>
+        </header>
+        <div id="sealedBody"></div>
 
-      <!-- flat page runner (mobile) -->
-      <div id="flat" class="flat" aria-live="polite"></div>
-
-      <!-- gold bookmark tabs (desktop) -->
-      <nav id="tabs" class="tabs" aria-label="Bookmark tabs"></nav>
-    </div>
-
-    <footer class="chrome chrome--foot">
-      <span id="spreadLabel" class="spreadlabel">SPREAD 0 / 5 &#8212; THE COVER</span>
-      <span class="foot__hint">arrow keys turn pages &#183; G cards &#183; M sound &#183; ESC arena</span>
-    </footer>
-
-    <div id="tabChips" class="tabchips" aria-label="Chapters"></div>
-  </section>
-
-  <!-- ══════════════════════════ CARD GALLERY OVERLAY ══════════════════════════ -->
-  <div id="gallery" class="gallery" role="dialog" aria-label="Card gallery">
-    <button class="gallery__close" data-action="gallery-close" aria-label="Close gallery">&#10005;</button>
-    <h2 class="gallery__title">&#10022; THE CARD GALLERY &#10022;</h2>
-    <p class="gallery__sub">click a card to summon its spread</p>
-    <div id="galleryGrid" class="gallery__grid"></div>
+        <aside class="bind-inset reveal" aria-label="How to bind your own chapter">
+          <h3 class="bind-title">Bind your own chapter</h3>
+          <ol class="bind-steps">
+            <li><b>1</b><span>Open <code>js/content.js</code> and fill one chapter block — name, lore, page, manual.</span></li>
+            <li><b>2</b><span>Push to <code>main</code>.</span></li>
+            <li><b>3</b><span>GitHub Pages rebinds the book: a new INDEX entry, a new card, a new manual. No build step.</span></li>
+          </ol>
+        </aside>
+      </div>
+    </section>
   </div>
 
-  <div id="flash" class="flash" aria-hidden="true"></div>
+  <!-- ══════════════════════ THE PACT — DARK ══════════════════════ -->
+  <section class="pact" id="pact" aria-labelledby="pactTitle">
+    <div class="wrap pact-grid">
+      <div class="pact-copy reveal">
+        <p class="kicker">◆ CHAPTER III ◆</p>
+        <h2 class="pact-title" id="pactTitle">The Millennium Pact</h2>
+        <p class="pact-lede">OnlyActions builds small, sharp tools and binds every one of them into this grimoire — a table of contents that is itself a living project. When a new power ships, a seal breaks: a sigil wakes, a card is drawn, a manual is printed.</p>
+        <p class="pact-lede">The toons look like cartoons. So did the six beasts of the index. Every reader of this book knows how that story goes.</p>
+      </div>
+      <div class="pact-actions reveal">
+        <a class="btn btn-gold" href="#index">Enter the Index</a>
+        <a class="btn btn-ghost" href="https://github.com/onlyactions" target="_blank" rel="noopener">Visit the GitHub</a>
+        <a class="btn btn-ghost" href="https://github.com/onlyactions/onlyactions.github.io/issues" target="_blank" rel="noopener">Propose a Sigil</a>
+      </div>
+    </div>
+  </section>
+</main>
 
-  <script src="js/content.js"></script>
-  <script src="js/app.js"></script>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span class="rainbow-line" aria-hidden="true"></span>
+    <p id="footerText"></p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to the top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="js/content.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
