@@ -3,95 +3,122 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OnlyActions — a tiny storybook of tools</title>
-  <meta name="description" content="The OnlyActions storybook: a cartoon flip-book table of contents and manual for every little tool we make." />
-  <meta name="theme-color" content="#7b1fb5" />
+  <title>Toon Table of Contents — OnlyActions</title>
+  <meta name="description" content="Activate the spell card and open the living grimoire: a full-screen Toon table of contents and manual for every OnlyActions project. Not cute — powerful." />
+  <meta name="theme-color" content="#0b0518" />
   <link rel="canonical" href="https://onlyactions.github.io/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://onlyactions.github.io/" />
-  <meta property="og:title" content="OnlyActions — a tiny storybook of tools" />
-  <meta property="og:description" content="Open the cover: a cartoon flip-book with the table of contents of our projects and a manual for each one." />
-  <meta property="og:image" content="https://onlyactions.github.io/assets/og.png" />
+  <meta property="og:title" content="Toon Table of Contents — OnlyActions" />
+  <meta property="og:description" content="A spell card, a duel arena, and a full-screen living grimoire holding the ToC and manual of every OnlyActions project." />
+  <meta property="og:image" content="https://onlyactions.github.io/ToonTableOfContents.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='6' width='44' height='52' rx='9' fill='%235b3d8f'/%3E%3Crect x='14' y='12' width='32' height='40' rx='6' fill='%23fff8ec'/%3E%3Cpath d='M22 24h20M22 32h20M22 40h12' stroke='%23b79cff' stroke-width='3.4' stroke-linecap='round'/%3E%3Cpath d='M47 6l1.8 2.5 3-.7-1 2.9 1.8 2.4-3.1.1-1.4 2.8-1.3-2.8-3.1-.4 1.9-2.4z' fill='%23f7c873'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='4' width='52' height='56' rx='10' fill='%230c6b3c'/%3E%3Crect x='14' y='10' width='36' height='44' rx='4' fill='%23f6ecd4'/%3E%3Ctext x='18' y='40' font-size='26' font-family='sans-serif' font-weight='bold' fill='%230c6b3c'%3EiN%3C/text%3E%3Ccircle cx='47' cy='17' r='6' fill='%23ffd34d'/%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Caveat:wght@600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cinzel:wght@700;900&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body data-chapter="none">
+<body>
 
-  <!-- 🌈 the dreamscape -->
-  <div class="scene" aria-hidden="true">
-    <div class="scene__moon">
-      <svg viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="34" fill="#ffe9b3" />
-        <circle cx="38" cy="42" r="5" fill="#f2d68f" />
-        <circle cx="59" cy="62" r="7" fill="#f2d68f" />
-        <circle cx="61" cy="36" r="3.4" fill="#f2d68f" />
-        <path d="M40 51 q5 4.5 10 0" stroke="#caa14e" stroke-width="2.6" fill="none" stroke-linecap="round" />
-        <path d="M55 49 q4 3.6 8 0" stroke="#caa14e" stroke-width="2.2" fill="none" stroke-linecap="round" />
-        <path d="M48 58 q4 3 8 0" stroke="#caa14e" stroke-width="2" fill="none" stroke-linecap="round" />
-      </svg>
+  <!-- ══════════════════════════ SCENE I — THE DUEL ARENA ══════════════════════════ -->
+  <section id="arena" class="arena" aria-label="The duel arena">
+    <div class="arena__bg" aria-hidden="true">
+      <div class="arena__glow"></div>
+      <div id="arenaStars" class="arena__stars"></div>
+      <div class="magiccircle magiccircle--a"></div>
+      <div class="magiccircle magiccircle--b"></div>
+      <div class="arena__rays"></div>
+      <div class="arena__floor"></div>
     </div>
-    <div class="scene__rainbow"></div>
-    <span class="bigstar" style="--c:#ffe94d; top:9%;  left:30%; font-size:52px; --d:0s">★</span>
-    <span class="bigstar" style="--c:#8dff4d; top:14%; right:24%; font-size:38px; --d:.8s">★</span>
-    <span class="bigstar" style="--c:#ffb64d; top:44%; left:7%;  font-size:34px; --d:1.6s">★</span>
-    <span class="bigstar" style="--c:#ffe94d; top:64%; right:6%; font-size:44px; --d:.4s">★</span>
-    <span class="bigstar" style="--c:#8dff4d; top:30%; right:9%; font-size:26px; --d:2.2s">★</span>
-    <span class="bigstar" style="--c:#ffd24d; top:78%; left:20%; font-size:30px; --d:1.1s">★</span>
-    <span class="bokeh" style="--c:#ff77e1; top:22%; left:16%; --s:120px"></span>
-    <span class="bokeh" style="--c:#7de3ff; top:70%; left:10%; --s:90px"></span>
-    <span class="bokeh" style="--c:#ffe94d; top:12%; right:14%; --s:70px"></span>
-    <span class="bokeh" style="--c:#ff5f9e; top:76%; right:18%; --s:130px"></span>
-    <span class="bokeh" style="--c:#b388ff; top:40%; right:30%; --s:80px"></span>
-    <div class="cloud cloud--1"></div>
-    <div class="cloud cloud--2"></div>
-    <div class="cloud cloud--3"></div>
-    <div class="stars" id="stars"></div>
-    <div class="fireflies" id="fireflies"></div>
+
+    <header class="arena__brand">
+      <span class="arena__brand-pre">ONLYACTIONS PRESENTS</span>
+      <span class="arena__brand-rule"></span>
+      <span class="arena__brand-post">A TABLE OF CONTENTS WITH TEETH</span>
+    </header>
+
+    <div class="arena__deck" aria-hidden="true">
+      <span class="deckcard deckcard--1"></span>
+      <span class="deckcard deckcard--2"></span>
+      <span class="deckcard deckcard--3"></span>
+      <span class="deckcard deckcard--4"></span>
+    </div>
+
+    <button id="heroCard" class="spellcard" data-action="activate" aria-label="Activate the spell card Toon Table of Contents">
+      <span class="spellcard__frame">
+        <span class="spellcard__name">TOON TABLE OF CONTENTS</span>
+        <span class="spellcard__icon" aria-hidden="true"><i></i></span>
+        <span class="spellcard__art" data-art="book"></span>
+        <span class="spellcard__type">NORMAL SPELL</span>
+        <span class="spellcard__text">Add 1 &ldquo;Toon&rdquo; chapter from your Deck to your screen. Once per turn: turn any page of this book, ignoring the rules. The toons are always watching.</span>
+        <span class="spellcard__foot"><span>ONLYACTIONS</span><span>1ST ED &#10022;</span></span>
+      </span>
+      <span class="spellcard__shine" aria-hidden="true"></span>
+    </button>
+
+    <p class="arena__hint" aria-hidden="true"><b>CLICK THE CARD TO ACTIVATE</b><span>or press ENTER</span></p>
+
+    <footer class="arena__foot">
+      <button class="btn-line" data-action="skip">skip the ritual &#8594; straight to the book</button>
+    </footer>
+  </section>
+
+  <!-- ══════════════════════════ SCENE II — THE GRIMOIRE ══════════════════════════ -->
+  <section id="stage" class="stage" hidden aria-label="The grimoire">
+    <div class="stage__bg" aria-hidden="true">
+      <div class="stage__glow"></div>
+      <div id="stageStars" class="stage__stars"></div>
+      <div class="stage__floor"></div>
+    </div>
+
+    <header class="chrome chrome--top">
+      <button class="wordmark" data-action="arena" title="Back to the arena">
+        <span class="wordmark__seal">&#10022;</span> TOON TABLE OF CONTENTS
+      </button>
+      <nav class="chrome__tools" aria-label="Grimoire controls">
+        <button class="tool" data-action="gallery" aria-label="Card gallery (G)" title="Card gallery (G)"><span>&#9638;</span> CARDS</button>
+        <button class="tool" id="soundBtn" data-action="sound" aria-label="Mute (M)" title="Sound (M)"><span>&#9834;</span> SOUND</button>
+        <button class="tool" data-action="fullscreen" aria-label="Fullscreen (F)" title="Fullscreen (F)"><span>&#9974;</span> FULL</button>
+      </nav>
+    </header>
+
+    <div class="bookwrap">
+      <div class="bookshadow" aria-hidden="true"></div>
+
+      <!-- 3D grimoire (desktop) -->
+      <div id="book" class="book book--closed" aria-live="polite"></div>
+
+      <!-- flat page runner (mobile) -->
+      <div id="flat" class="flat" aria-live="polite"></div>
+
+      <!-- gold bookmark tabs (desktop) -->
+      <nav id="tabs" class="tabs" aria-label="Bookmark tabs"></nav>
+    </div>
+
+    <footer class="chrome chrome--foot">
+      <span id="spreadLabel" class="spreadlabel">SPREAD 0 / 5 &#8212; THE COVER</span>
+      <span class="foot__hint">arrow keys turn pages &#183; G cards &#183; M sound &#183; ESC arena</span>
+    </footer>
+
+    <div id="tabChips" class="tabchips" aria-label="Chapters"></div>
+  </section>
+
+  <!-- ══════════════════════════ CARD GALLERY OVERLAY ══════════════════════════ -->
+  <div id="gallery" class="gallery" role="dialog" aria-label="Card gallery">
+    <button class="gallery__close" data-action="gallery-close" aria-label="Close gallery">&#10005;</button>
+    <h2 class="gallery__title">&#10022; THE CARD GALLERY &#10022;</h2>
+    <p class="gallery__sub">click a card to summon its spread</p>
+    <div id="galleryGrid" class="gallery__grid"></div>
   </div>
 
-  <!-- ✦ chrome -->
-  <header class="chrome chrome--top">
-    <a class="brand" href="#cover">✦ OnlyActions</a>
-    <a class="btn btn--ghost" href="https://github.com/onlyactions" target="_blank" rel="noopener">GitHub ↗</a>
-  </header>
-
-  <main class="stage">
-    <div class="book-wrap" id="bookWrap">
-      <div class="book-glow" aria-hidden="true"></div>
-      <div class="book" id="book" role="group" aria-label="The OnlyActions storybook"></div>
-      <button type="button" class="corner corner--prev" aria-label="Previous page"></button>
-      <button type="button" class="corner corner--next" aria-label="Next page"></button>
-    </div>
-  </main>
-
-  <footer class="chrome chrome--bottom">
-    <button type="button" id="btnPrev" class="navbtn" aria-label="Previous page">←</button>
-    <div class="dots" id="dots" role="tablist" aria-label="Spreads"></div>
-    <button type="button" id="btnToC" class="navbtn navbtn--ribbon" aria-label="Back to the Contents">📖</button>
-    <button type="button" id="btnNext" class="navbtn" aria-label="Next page">→</button>
-  </footer>
-
-  <div class="sr-only" aria-live="polite" id="announcer"></div>
-
-  <noscript>
-    <div class="nojs">
-      <h1>OnlyActions — a tiny storybook of tools</h1>
-      <p>The storybook needs JavaScript to flip its pages. Until then, the plain tale:</p>
-      <ul>
-        <li><a href="https://github.com/onlyactions">The workshop (GitHub)</a> — where the tools live</li>
-      </ul>
-    </div>
-  </noscript>
+  <div id="flash" class="flash" aria-hidden="true"></div>
 
   <script src="js/content.js"></script>
-  <script src="js/book.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
