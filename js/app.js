@@ -319,6 +319,12 @@
     if (h && h !== "top") {
       setTimeout(() => goTo(h, false), 80);
     }
+
+    /* and on any later hash change (back/forward, manual edits) */
+    addEventListener("hashchange", () => {
+      const id = decodeURIComponent(location.hash.slice(1));
+      if (id && id !== "top") goTo(id);
+    });
   }
 
   /* ------------------------------- boot ------------------------------- */
