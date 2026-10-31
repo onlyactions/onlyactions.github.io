@@ -54,7 +54,7 @@
     p.innerHTML =
       '<div class="cover__frame">' +
         '<p class="cover__press">✦ ' + esc(B.press) + ' presents ✦</p>' +
-        '<h1 class="cover__title">' + esc(B.title) + '</h1>' +
+        '<h1 class="cover__title rainbow-text">' + esc(B.title) + '</h1>' +
         '<p class="cover__sub">' + esc(B.subtitle) + '</p>' +
         worm('worm--cover') +
         '<p class="cover__hint">✦ open me ✦</p>' +
@@ -113,7 +113,7 @@
     var list = el('nav', 'toc__list', '');
     list.setAttribute('aria-label', 'Table of contents');
     rows.forEach(function (r) { list.appendChild(r); });
-    p.innerHTML = '<header class="page__head"><h2 class="page__title u-doodle">Contents</h2>' +
+    p.innerHTML = '<header class="page__head"><h2 class="page__title rainbow-text">Contents</h2>' +
       '<p class="page__kicker">every chapter, one tap away</p></header>';
     p.appendChild(list);
     p.appendChild(el('p', 'toc__foot hand', 'more chapters are being dreamed…'));
