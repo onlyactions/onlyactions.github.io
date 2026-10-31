@@ -612,6 +612,9 @@ body {
 .deck .page[data-pos="0"] { z-index: 10; }
 .deck.no-anim .page { transition: none !important; }
 .deck .page--cover { border-radius: 18px; }
+.deck .page--cover {
+  background: linear-gradient(160deg, #2fc47e 0%, #1da56a 55%, #148a58 100%);
+}
 
 .book-wrap:not(.is-bookmode) .book-glow { inset: -14% -20%; }
 

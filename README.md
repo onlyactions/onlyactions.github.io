@@ -49,7 +49,7 @@ how-to page. Set `status: "soon"` to plant a seedling chapter instead.
 - Turn pages: curled corners, the arrows, `←` `→` keys, or swipe
 - Jump: tap any line in the Contents (the 📖 ribbon brings you back)
 - Share: every spread has its own address — `#cover`, `#toc`, `#read`,
-  `#ch1`, `#end`…
+  `#storybook`, `#grow`, `#seedling`, `#end`…
 
 ## 🛠 Under the hood
 
