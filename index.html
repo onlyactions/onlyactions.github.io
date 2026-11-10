@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toon Table of Contents — One Click to Every Project | OnlyActions</title>
+<meta name="description" content="The deck of OnlyActions: every repository bound as a Yu-Gi-Oh!-styled card with real pipeline numbers and one-click access to repos, reports, runs, releases and subscriptions.">
+<meta property="og:title" content="Toon Table of Contents">
+<meta property="og:description" content="Every OnlyActions repository, bound as a summonable card — real numbers, real links, one click from card to code.">
+<meta property="og:image" content="https://onlyactions.github.io/ToonTableOfContents.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e0920'/%3E%3Cpath d='M7 10c3-1.6 6-1.6 9 0v13c-3-1.6-6-1.6-9 0zM25 10c-3-1.6-6-1.6-9 0v13c3-1.6 6-1.6 9 0z' fill='none' stroke='%23e5bd62' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/deck.css">
+</head>
+<body>
+<a class="skip-link" href="#deck">Skip to the deck</a>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Toon Table of Contents — back to top">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.2 4.4 9 4.4 12 6v13.5C9 17.9 6.2 17.9 4 19zM20 5.5C17.8 4.4 15 4.4 12 6v13.5c3-1.6 5.8-1.6 8-.5z"/></svg>
+      <span class="brand-name rainbow-text">Toon Table <b>of Contents</b></span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#deck" data-navlink="deck">The Deck</a>
+      <a href="#manual" data-navlink="manual">Manual</a>
+      <a class="nav-repo" href="https://github.com/onlyactions" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+  <span class="progress" id="progress" aria-hidden="true"></span>
+</header>
+
+<main id="top">
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="hero" id="hero" aria-label="Toon Table of Contents">
+    <div class="stars" id="stars" aria-hidden="true"></div>
+
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker reveal">◆ ONLYACTIONS · ONE CLICK TO EVERYTHING ◆</p>
+        <h1 class="hero-title">
+          <span class="ht-line reveal">Toon Table</span>
+          <span class="ht-line rainbow-text reveal">of Contents</span>
+        </h1>
+        <p class="hero-lede reveal">Every repository in the set, bound as summonable cards — <strong>real numbers, real links</strong>, one click from card to code. The toons look like cartoons. The numbers are not.</p>
+        <div class="hero-ctas reveal">
+          <a class="btn btn-gold" href="#deck">Enter the Deck</a>
+          <a class="btn btn-ghost" href="#manual">Read the Manual</a>
+        </div>
+        <p class="hero-meta reveal" id="heroMeta"></p>
+      </div>
+
+      <figure class="hero-card-zone reveal">
+        <svg class="hero-arc" viewBox="44 68 512 266" aria-hidden="true" preserveAspectRatio="xMidYMax meet">
+          <g fill="none" stroke-linecap="round">
+            <path d="M48 330 A252 252 0 0 1 552 330" stroke="#ff5a5a"/>
+            <path d="M62 330 A238 238 0 0 1 538 330" stroke="#ff9d3c"/>
+            <path d="M76 330 A224 224 0 0 1 524 330" stroke="#ffd93c"/>
+            <path d="M90 330 A210 210 0 0 1 510 330" stroke="#4cd964"/>
+            <path d="M104 330 A196 196 0 0 1 496 330" stroke="#38c3ff"/>
+            <path d="M118 330 A182 182 0 0 1 482 330" stroke="#7a5cff"/>
+            <path d="M132 330 A168 168 0 0 1 468 330" stroke="#d24fd6"/>
+          </g>
+        </svg>
+        <button class="spell-art" id="heroCard" type="button" aria-label="Activate the spell — enter the deck">
+          <img src="ToonTableOfContents.png" alt="Toon Table of Contents — the original spell card: the great Toon World book opened to its rainbow INDEX" width="1024" height="1024">
+        </button>
+        <figcaption class="hero-cap">Normal Spell · “add 1 “Toon” card from your Deck to your hand”</figcaption>
+      </figure>
+    </div>
+
+    <a class="scroll-cue" href="#deck" aria-label="Scroll down to the deck"><span>Descend</span><i aria-hidden="true"></i></a>
+  </section>
+
+  <!-- ══════════════ THE DECK ══════════════ -->
+  <section class="deck" id="deck" aria-labelledby="deckTitle">
+    <div class="wrap">
+      <header class="deck-head">
+        <p class="kicker reveal">◆ CHAPTER I ◆</p>
+        <h2 class="deck-title reveal" id="deckTitle">The Deck</h2>
+        <p class="deck-sub reveal">one card per repository — click a card to inspect it, click a button to be there</p>
+      </header>
+
+      <div class="toolbar reveal" role="search">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+          <label class="visually-hidden" for="deckSearch">Search the deck</label>
+          <input id="deckSearch" type="search" placeholder="Search the deck — name, protocol, topic…" autocomplete="off">
+        </div>
+        <div class="chip-row" id="chipRow" role="group" aria-label="Filter by language"></div>
+        <p class="deck-count" id="deckCount" role="status" aria-live="polite"></p>
+      </div>
+
+      <div class="card-grid" id="cardGrid"></div>
+      <p class="deck-empty" id="deckEmpty" hidden>No cards answered your summons. <button class="link-btn" id="resetSearch" type="button">Reset the search</button></p>
+    </div>
+  </section>
+
+  <!-- ══════════════ THE MANUAL ══════════════ -->
+  <section class="manual" id="manual" aria-labelledby="manualTitle">
+    <div class="wrap">
+      <header class="manual-head">
+        <p class="paper-run"><span id="runLeft"></span><span id="runRight"></span></p>
+        <h2 class="manual-title" id="manualTitle">❖&nbsp;The Duelist’s Manual&nbsp;❖</h2>
+        <p class="manual-sub">how the deck works — and what the numbers really mean</p>
+      </header>
+
+      <div class="manual-grid">
+        <div class="m-col reveal">
+          <h3 class="m-heading">THE RITUAL</h3>
+          <ol class="ritual">
+            <li><div><p class="ritual-t">PICK A CARD</p><p class="ritual-d">Every OnlyActions repository is one card in the deck, carrying its real, measured power stats.</p></div></li>
+            <li><div><p class="ritual-t">INSPECT IT</p><p class="ritual-d">Click any card: the inspector opens with its full lore, topics and every link that exists — no dead ends.</p></div></li>
+            <li><div><p class="ritual-t">ONE CLICK, YOU'RE THERE</p><p class="ritual-d">Repo, living report, action runs, releases, subscription files — each is a single click from the card you're holding.</p></div></li>
+          </ol>
+          <p class="tip">The whole deck is real text — your browser's find-in-page (<kbd>Ctrl / Cmd + F</kbd>) works across every card.</p>
+        </div>
+
+        <div class="m-col reveal">
+          <h3 class="m-heading">WHAT ATK / DEF MEAN</h3>
+          <p class="m-note">These are not fantasy numbers. Each card's stats are its project's latest real measurements:</p>
+          <dl class="stat-dict">
+            <div><dt>VPN GATE MONITOR</dt><dd><b>ATK 442</b> — servers really tunnel-tested in the last run · <b>DEF 205</b> — proven alive with verified egress.</dd></div>
+            <div><dt>PROXY SCANNER</dt><dd><b>ATK 4,511</b> — proxies really loaded into Xray / sing-box tunnels · <b>DEF 1,052</b> — exits whose IP verifiably changed.</dd></div>
+            <div><dt>THE BUTTON</dt><dd><b>ATK ? · DEF ?</b> — its power cannot be measured, only pressed.</dd></div>
+            <div><dt>THE DECK ITSELF</dt><dd><b>9000 / 9000</b> — as it should be.</dd></div>
+          </dl>
+          <p class="m-note">Stats are baked at bind time — <b>2026-11-10</b> — from the projects' own daily runs. Open a card's <i>Living Report</i> for today's numbers.</p>
+        </div>
+      </div>
+
+      <aside class="bind-inset reveal" aria-label="How to grow the deck">
+        <h3 class="bind-title">Grow the deck</h3>
+        <ol class="bind-steps">
+          <li><b>1</b><span>Ship a new repository under <code>onlyactions</code>.</span></li>
+          <li><b>2</b><span>Bind the deck: add one card block to <code>js/data.js</code> in this repo — name, lore, real stats, links.</span></li>
+          <li><b>3</b><span>Push to <code>main</code>. GitHub Pages rebinds the deck — a new card joins the field. No build step.</span></li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ══════════════ THE PACT ══════════════ -->
+  <section class="pact" id="pact" aria-labelledby="pactTitle">
+    <div class="wrap pact-grid">
+      <div class="pact-copy reveal">
+        <p class="kicker">◆ CHAPTER II ◆</p>
+        <h2 class="pact-title" id="pactTitle">The Millennium Pact</h2>
+        <p class="pact-lede">OnlyActions builds small, sharp machines that prove their own work: tunnels that are really opened, proxies that are really verified, a button that is really a circle. Each one is bound into this deck the day it ships.</p>
+        <p class="pact-lede">Cartoon on the outside. Power on the inside. That is the pact.</p>
+      </div>
+      <div class="pact-actions reveal">
+        <a class="btn btn-gold" href="#deck">Back to the Deck</a>
+        <a class="btn btn-ghost" href="https://github.com/onlyactions?tab=repositories" target="_blank" rel="noopener">All Repositories</a>
+        <a class="btn btn-ghost" href="https://github.com/onlyactions/onlyactions.github.io/issues" target="_blank" rel="noopener">Propose a Card</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span class="rainbow-line" aria-hidden="true"></span>
+    <p id="footerText"></p>
+  </div>
+</footer>
+
+<!-- ══════════════ CARD INSPECTOR ══════════════ -->
+<div class="inspector" id="inspector" role="dialog" aria-modal="true" aria-labelledby="insTitle" hidden>
+  <div class="ins-scrim" data-close></div>
+  <div class="ins-panel" role="document">
+    <button class="ins-close" id="insClose" type="button" aria-label="Close inspector">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="ins-body" id="insBody"></div>
+  </div>
+</div>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to the top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
